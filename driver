@@ -1,0 +1,63 @@
+//Driver.java (tester program)
+
+public class Driver {
+
+                public static void main(String[] args) {
+
+                                /**
+
+                                * Creating three persons using different methods
+
+                                */
+
+                                Name name1 = new Name("OlivEr", "QUeEn");
+
+                                Person person1 = new Person(name1, 'M', 30, 55000.55);
+
+                                Person person2 = new Person(new Name("Dina", "Laurel", "Lance"), 'F',
+
+                                                                27, 2500);
+
+                                Person person3=new Person("Felicity", "Smoak", 'F', 28, 17000);
+
+                               
+
+                                /**
+
+                                * Displaying them
+
+                                */
+
+                                System.out.println(person1);
+
+                                System.out.println(person2);
+
+                                System.out.println(person3);
+
+                                /**
+
+                                * demonstrating the setter methods and validations
+
+                                */
+
+                                System.out.println("Trying to set gender 'X' for "+person3.getName()+"(shouldn't be changed)");
+
+                                person3.setGender('X');
+
+                                System.out.println("Result: "+person3);
+
+                                System.out.println("Trying to set age 12 for "+person3.getName()+"(should be changed)");
+
+                                person3.setAge(12);
+
+                                System.out.println("Result: "+person3);
+
+                                System.out.println("Trying to set age 0 for "+person1.getName()+"(shouldn't be changed)");
+
+                                person1.setAge(0);
+
+                                System.out.println("Result: "+person1);
+
+                }
+
+}
