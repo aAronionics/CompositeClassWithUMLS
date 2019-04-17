@@ -1,0 +1,160 @@
+// Person.java
+
+public class Person {
+
+                // attributes
+
+                private Name name;
+
+                private char gender;
+
+                private int age;
+
+                private double salary;
+
+                // default constructor
+
+                public Person() {
+
+                                // default values
+
+                                name = new Name("", "");
+
+                                gender = 'M';
+
+                                age = 1;
+
+                                salary = 0;
+
+                }
+
+                //constructor to initialize name, gender, age and salary
+
+                public Person(Name name, char gender, int age, double salary) {
+
+                                this();//using default values first
+
+                                //validating all fields before assigning
+
+                                setName(name);
+
+                                setGender(gender);
+
+                                setAge(age);
+
+                                setSalary(salary);
+
+                }
+
+                //constructor to initialize name object from first and last names, gender, age and salary
+
+                public Person(String firstName, String lastName, char gender, int age,
+
+                                                double salary) {
+
+                                this();
+
+                                Name name = new Name(firstName, lastName);
+
+                                setName(name);
+
+                                setGender(gender);
+
+                                setAge(age);
+
+                                setSalary(salary);
+
+                }
+
+               
+
+                //getters and setters
+
+               
+
+                public Name getName() {
+
+                                return name;
+
+                }
+
+                public void setName(Name name) {
+
+                                this.name = name;
+
+                }
+
+                public int getAge() {
+
+                                return age;
+
+                }
+
+                public void setAge(int age) {
+
+                                /**
+
+                                * changing the age only if it is between 1 and 120
+
+                                */
+
+                                if (age >= 1 && age <= 120)
+
+                                                this.age = age;
+
+                }
+
+                public double getSalary() {
+
+                                return salary;
+
+                }
+
+                public void setSalary(double salary) {
+
+                                /**
+
+                                * setting salary only if it is non negative
+
+                                */
+
+                                if (salary >= 0)
+
+                                                this.salary = salary;
+
+                }
+
+                public char getGender() {
+
+                                return gender;
+
+                }
+
+                public void setGender(char gender) {
+
+                                //converting to upper case
+
+                                gender = Character.toUpperCase(gender);
+
+                                //assinging only if gender is M or F
+
+                                if (gender == 'M' || gender == 'F')
+
+                                                this.gender = gender;
+
+                }
+
+                @Override
+
+                public String toString() {
+
+                                //returns a String to represent the whole data of a person
+
+                                return name + ", Gender: " + gender + ", Age: " + age + ", Salary: $"
+
+                                                                + salary;
+
+                }
+
+}
+
